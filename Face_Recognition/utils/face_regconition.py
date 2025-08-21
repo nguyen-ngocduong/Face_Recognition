@@ -32,7 +32,8 @@ def cal_similar(vectorC, embedding_df):
     threshold = min(0.25, np.mean(distances_array) - np.std(distances_array))
     if distances[min_distance_index] > threshold:  
         person_name = "Khong phat hien guong mat"
+        confidence = 1 - min_distance
     else:
         person_name = embedding_df.iloc[min_distance_index, 0]  # label nằm ở cột 0
         confidence = 1 - min_distance  # Convert distance to confidence
-        return person_name, confidence   
+    return person_name, confidence   
