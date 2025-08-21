@@ -16,6 +16,7 @@ cap = cv2.VideoCapture(0)  # Mở camera
 if not cap.isOpened():
     print("Khong thể mở camera")
     exit()
+print("Nhấn 'q' để thoát")
 while True:
     ret, frame = cap.read()
     if not ret:
